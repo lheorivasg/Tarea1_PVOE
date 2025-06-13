@@ -54,8 +54,14 @@ public class OperacionesLista {
 
 
     // Buscar alumno por matrícula
-    public Alumno buscarPorMatricula(String matricula) {
-
+   public Alumno buscarPorMatricula(String matricula) {
+        Nodo actual = cabeza;
+        while (actual != null) {
+            if (actual.getAlumno().getMatricula().equals(matricula)) {
+                return actual.getAlumno();
+            }
+            actual = actual.getSiguiente();
+        }
         return null;
     }
 
