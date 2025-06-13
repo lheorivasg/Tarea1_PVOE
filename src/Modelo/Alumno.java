@@ -10,12 +10,12 @@ package Modelo;
  * @author Kirig
  */
 public class Alumno {
-    String matricula;
-    String nombre;
-    String apellidoPaterno;
-    String apellidoMaterno;
-    String licenciatura;
-    String genero;
+    private String matricula;
+    private String nombre;
+    private String apellidoPaterno;
+    private String apellidoMaterno;
+    private String licenciatura;
+    private String genero;
 
     public Alumno() {
     }
@@ -32,6 +32,54 @@ public class Alumno {
     @Override
     public String toString() {
         return "Alumno{" + "matricula=" + matricula + ", nombre=" + nombre + ", apellidoPaterno=" + apellidoPaterno + ", apellidoMaterno=" + apellidoMaterno + ", licenciatura=" + licenciatura + ", genero=" + genero + '}';
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellidoPaterno() {
+        return apellidoPaterno;
+    }
+
+    public String getApellidoMaterno() {
+        return apellidoMaterno;
+    }
+
+    public String getLicenciatura() {
+        return licenciatura;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellidoPaterno(String apellidoPaterno) {
+        this.apellidoPaterno = apellidoPaterno;
+    }
+
+    public void setApellidoMaterno(String apellidoMaterno) {
+        this.apellidoMaterno = apellidoMaterno;
+    }
+
+    public void setLicenciatura(String licenciatura) {
+        this.licenciatura = licenciatura;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
     
     
