@@ -37,7 +37,11 @@ public class OperacionesLista {
     }
 
     private Nodo cabeza;
-
+    public void agregar(Alumno alumno) {
+        Nodo nuevo = new Nodo(alumno);
+        nuevo.setSiguiente(cabeza);
+        cabeza = nuevo;
+    }
 
 
     // Buscar alumno por matrícula
