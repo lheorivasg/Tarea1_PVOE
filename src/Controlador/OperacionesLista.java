@@ -72,8 +72,26 @@ public class OperacionesLista {
 
     // Buscar alumnos por género
     public void buscarPorGenero(String genero) {
+    Nodo actual = cabeza;
+    boolean encontrado = false;
 
+    while (actual != null) {
+        if (actual.getAlumno().getGenero().equalsIgnoreCase(genero)) {
+            System.out.println("---- Alumno encontrado ----");
+            System.out.println("Matrícula: " + actual.getAlumno().getMatricula());
+            System.out.println("Nombre: " + actual.getAlumno().getNombre() + " " + actual.getAlumno().getApellidoPaterno() + " " + actual.getAlumno().getApellidoMaterno());
+            System.out.println("Licenciatura: " + actual.getAlumno().getLicenciatura());
+            System.out.println("Género: " + actual.getAlumno().getGenero());
+            System.out.println("----------------------------");
+            encontrado = true;
+        }
+        actual = actual.getSiguiente();
     }
+
+    if (!encontrado) {
+        System.out.println("No se encontraron alumnos con el género: " + genero);
+    }
+}
     
     
     // Eliminar alumno por matrícula
