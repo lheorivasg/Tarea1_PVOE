@@ -38,19 +38,6 @@ public class OperacionesLista {
 
     private Nodo cabeza;
 
-    // Método para agregar un alumno a la lista (al principio)
-    public void agregar(Alumno alumno) {
-        Nodo nuevoNodo = new Nodo(alumno);
-        if (cabeza == null) {      //insertamos 1er alumno (no hay nada en la cabeza)
-            cabeza = nuevoNodo;         //1er nodo d la lista
-        } else {                    //ya tiene elementos la lista (se meteran al final d la lista los alumnos)
-            Nodo actual = cabeza;
-            while (actual.getSiguiente() != null) {
-                actual = actual.getSiguiente();
-            }
-            actual.setSiguiente(nuevoNodo);     // enlaza al final
-        }
-    }
 
 
     // Buscar alumno por matrícula
