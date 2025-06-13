@@ -86,7 +86,7 @@ public class OperacionesLista {
             encontrado = true;
         }
         actual = actual.getSiguiente();
-    }
+    }  
 
     if (!encontrado) {
         System.out.println("No se encontraron alumnos con el género: " + genero);
