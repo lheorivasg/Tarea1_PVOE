@@ -67,7 +67,19 @@ public class OperacionesLista {
 
     // Buscar alumnos por licenciatura
     public void buscarPorLicenciatura(String claveLic) {
-
+        Nodo lic =cabeza;//inicia el nodo desde la cabez
+        if(lic!=null){//compara el primer valor en la lista para saber si forma parte de la licenciatura buscada
+            if (claveLic.equals(lic.getAlumno().getLicenciatura())) {
+                System.out.println(lic.getAlumno().toString());
+            }
+        }
+        //avanza un nodo en la lista y comienza a comparar, siempre y cuando el siguiente nodo no este vacio
+        while(lic.getSiguiente()!=null){ 
+            lic=lic.getSiguiente();
+            if (claveLic.equals(lic.getAlumno().getLicenciatura())) {//compara la licenciatura buscada con la del alumno
+                System.out.println(lic.getAlumno().toString());//imprime los datos del alumno
+            }   
+        }
     }
 
     // Buscar alumnos por género
