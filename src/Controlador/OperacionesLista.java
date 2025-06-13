@@ -40,8 +40,18 @@ public class OperacionesLista {
 
     // Método para agregar un alumno a la lista (al principio)
     public void agregar(Alumno alumno) {
-
+        Nodo nuevoNodo = new Nodo(alumno);
+        if (cabeza == null) {      //insertamos 1er alumno (no hay nada en la cabeza)
+            cabeza = nuevoNodo;         //1er nodo d la lista
+        } else {                    //ya tiene elementos la lista (se meteran al final d la lista los alumnos)
+            Nodo actual = cabeza;
+            while (actual.getSiguiente() != null) {
+                actual = actual.getSiguiente();
+            }
+            actual.setSiguiente(nuevoNodo);     // enlaza al final
+        }
     }
+
 
     // Buscar alumno por matrícula
     public Alumno buscarPorMatricula(String matricula) {
@@ -58,12 +68,31 @@ public class OperacionesLista {
     public void buscarPorGenero(String genero) {
 
     }
-
+    
+    
     // Eliminar alumno por matrícula
-    public boolean eliminarPorMatricula(String matricula) {
-
-
-        return false;
+   public boolean eliminarPorMatricula(String matricula) {  
+       if (cabeza == null) {                //en caso de que se proporcione una lista sin nada
+           System.out.println("La lista está vacía.");
+           return false;
+       }
+        // Caso mas facil : alumno al principio de la lista
+        if (cabeza.getAlumno().getMatricula().equals(matricula)) {
+            cabeza = cabeza.getSiguiente(); // Se elimina el primer nodo(cabeza)
+            return true;                //(si se eliminó al alumno)
+        }
+    // Recorremos la lista buscando al alumno
+    Nodo actual = cabeza;
+    while (actual.getSiguiente() != null) {         //mientras haya alumnos en la lista
+        if (actual.getSiguiente().getAlumno().getMatricula().equals(matricula)) {
+            actual.setSiguiente(actual.getSiguiente().getSiguiente()); // Se elimina el nodo
+            return true;            //(si se eliminó al alumno)
+        }
+        actual = actual.getSiguiente();
     }
+    //el alumno no existe
+    return false;
+}
+
 }
 
